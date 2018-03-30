@@ -37,6 +37,13 @@ public class Calculator {
         System.out.println(leftOperand + " " + operator + " " + rightOperand + " = " + result);
     }
 
+    public double calculate(double a, double b, String operator) throws UnknownOperationException  {
+        operation = getOperationFor(operator);
+        double result = operation.resultFor(a, b);
+        System.out.println(a + " " + operator + " " + b + " = " + result);
+        return result;
+    }
+
 
     private BinaryOperation getOperationFor(String operator) throws UnknownOperationException {
         if ("*".equals(operator)) {
